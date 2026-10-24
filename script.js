@@ -11,7 +11,8 @@ function clearScreen() {
 function calculateResult() {
     try {
         if (displayField.value != "") {
-            displayField.value = eval(displayField.value);
+        let expression = displayField.value.replace(/%/g, '/100');
+            displayField.value = eval(expression);
         }
     } catch (error) {
         displayField.value = "Error";
